@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+➔ We look for quality over quantity, so don't worry about getting it all done, just
+ensure that what is completed is of great quality.
+Specification:
+➔ The top navigation section should be sticky but also hide when the user scrolls down and reappear if the user scrolls up
+➔ The "Services" menu item shows the hover/active state of each menu item for the header
+➔ The header area (nav?) should be full screen on desktop and collapse to a hamburger style menu on tablet and mobile viewports which slides in/out of view when clicked/tapped
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+➔ For links (e.g. "Lets talk") add a hover animation of your choosing
+➔ The "What are we capable of" shows the hover state on "Brand Strategy"
+➔ "Some of our recent projects" shows a tabbed slider action. Animation for slider
+and tabs of your choosing. Image hover state shown on "Make Ideas Happen"
+project.
+➔ "Case Studies" slider section shows an active Case Study and two further Case
+Studies to the left and right which are accessed using the arrow buttons
+➔ "What are we all about?" section shows a masonry gallery - final image layout
+can be adjusted
+➔ The testimonial slider section shows the active slide, with further slides
+accessed using the circle buttons
+➔ All links and buttons should have an hover/active/visited state where
+appropriate
+➔ No tablet or mobile visuals are provided, so stack, reduce content where
+appropriate inline with best practice
+It would be great to demonstrate any knowledge you have of React & Javascript
+overall on the frontend using the latest standards - i.e. ES6+ - we’d also find it useful
+to see some TypeScript utilised as well as utilising global state management such as
+Redux or the Context API. For example:
+➔ Testimonials could be data that’s accessed from an external API (in normal
+circumstances) and you could use Redux to fetch these with async actions
+and store to/retrieve from state. As there is no external API in this case, this
+could be data fetched from a JSON file elsewhere in the app.
 
-## Available Scripts
+MY APPROACH
 
-In the project directory, you can run:
+1. Decided to use SASS styling... and keep style files as modules....why?
+2. Set out component tree to plan what information would be stored where
+3. Considered where useState might be used to render appropriate elements
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MY NOTES TO REMOVE
+Sass - use \_ for varaibles to make sure it isn'r compiled and instead is imported
+no ITC avant guard font on google
