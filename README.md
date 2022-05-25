@@ -31,10 +31,12 @@ could be data fetched from a JSON file elsewhere in the app.
 
 MY APPROACH
 
-1. Decided to use SASS styling... and keep style files as modules....why?
-2. Set out component tree to plan what information would be stored where
-3. Considered where useState might be used to render appropriate elements
+2. Set out component tree to plan what information would be stored where & what components needed access to certain props
+3. Considered where useState might be used to render appropriate elements on the virtual DOM
+4. Looked online for a suitable React based hamburger menu but decided to make my own. Opted for a hidden button and onClick event on the hamburger menu. on click it changes the state which generate the HTML for a drop down list
+5.
 
 MY NOTES TO REMOVE
 Sass - use \_ for varaibles to make sure it isn'r compiled and instead is imported
 no ITC avant guard font on google
+Learnt about NavLink hook, pulls in from react-router-dom

@@ -1,0 +1,71 @@
+.navbar__hamburger {
+  display: none;
+}
+
+.navbar__mobileList {
+  display: hidden;
+}
+
+@media screen and (max-width: 400px) {
+  .navbar__desktop {
+    display: none;
+  }
+
+  .navbar {
+    &__mobileList {
+      display: block;
+    }
+
+    &__mobile {
+      border: 2px solid red;
+      display: fixed;
+    }
+
+    &__hamburger {
+      display: flex;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &__toggle {
+      //   position: relative;
+      z-index: 1;
+      opacity: 0;
+      height: 30px;
+      width: 45px;
+      background-color: red;
+      margin: 25px 15px 0 0;
+    }
+    &__toggleLabel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .navbar__toggleLabel span,
+  .navbar__toggleLabel span::before,
+  .navbar__toggleLabel span::after {
+    display: block;
+    background-color: #101628;
+    height: 3px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  .navbar__toggleLabel span::before,
+  .navbar__toggleLabel span::after {
+    content: "";
+    position: absolute;
+  }
+
+  .navbar__toggleLabel span::before {
+    bottom: 7px;
+  }
+
+  .navbar__toggleLabel span::after {
+    top: 7px;
+  }
+}

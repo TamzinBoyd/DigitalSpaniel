@@ -1,6 +1,6 @@
 import React from "react";
 import spaniel from "../../assets/spanielGradient.png";
-import styles from "./Header.module.scss";
+import styles from "./Header.scss";
 import Link from "../Link/Link";
 
 const Header = () => {
