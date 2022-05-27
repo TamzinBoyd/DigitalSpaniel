@@ -34,9 +34,10 @@ MY APPROACH
 2. Set out component tree to plan what information would be stored where & what components needed access to certain props
 3. Considered where useState might be used to render appropriate elements on the virtual DOM
 4. Looked online for a suitable React based hamburger menu but decided to make my own. Opted for a hidden button and onClick event on the hamburger menu. on click it changes the state which generate the HTML for a drop down list
-5.
+5. Not created a scroll bar which sticks and disapears before, decided to use state and looked online for a solution involving window.scrollY
 
 MY NOTES TO REMOVE
 Sass - use \_ for varaibles to make sure it isn'r compiled and instead is imported
 no ITC avant guard font on google
 Learnt about NavLink hook, pulls in from react-router-dom
+REM - relative to font size of html doc, em relative to parent font size, both better for responsive sites

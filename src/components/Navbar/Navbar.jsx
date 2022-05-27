@@ -1,54 +1,72 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import Hamburger from "../Hamburger";
+import styles from "./Navbar.scss";
 import logo from "../../assets/logo.png";
+import { Link } from "react-scroll";
 
-const Test = () => {
-  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+const Navbar = () => {
+  const [didUserScroll, setDidUserScroll] = useState(false);
+  const [scrollClassName, setScrollClassName] = useState("");
+  const [lastScroll, setLastScroll] = useState(0);
 
-  // example to set
-  // const setStyle2 = isNavbarOpen ? styles.active : "";
+  const navLinks = [
+    { name: "Services", href: "Services" },
+    { name: "Work", href: "Work" },
+    { name: "About", href: "About" },
+    { name: "Blog", href: "Blog" },
+    { name: "Contact", href: "Contact" },
+  ];
 
-  const handleNavbarToggle = () => {
-    setIsNavbarOpen(!isNavbarOpen);
+  const checkForScroll = () => {
+    if (typeof window !== "undefined") {
+      console.log(window.scrollY);
+      console.log(lastScroll);
+
+      if (window.scrollY > lastScroll) {
+        setDidUserScroll(false);
+        setScrollClassName("hidden");
+      } else {
+        setDidUserScroll(true);
+        setScrollClassName("");
+      }
+      setLastScroll(window.scrollY);
+    }
   };
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", checkForScroll);
 
-  const showMobileList = (
-    <ul>
-      <li>mobile 1</li>
-      <li>mobile 1</li>
-      <li>mobile 1</li>
-    </ul>
-  );
+      return () => {
+        window.removeEventListener("scroll", checkForScroll);
+      };
+    }
+  }, [lastScroll]);
+
+  let scrollNav = `navbar__desktop__list ${scrollClassName}`;
 
   return (
-    <div className="navbar">
-      <div class="navbar__logo">
-        <img src={logo} alt="company logo" width="200"></img>
-      </div>
-      <div className="navbar__desktop">
-        <ul>
-          <li>item 1</li>
-          <li>item 2</li>
-          <li>item 3</li>
-        </ul>
-      </div>
-
-      <div className="navbar__mobile">
-        <div className="navbar__hamburger">
-          <button
-            className="navbar__toggle"
-            onClick={handleNavbarToggle}
-          ></button>
-          <label for="navbar__toggle" className="navbar__toggleLabel">
-            <span className="navbar__toggleLabel"></span>
-          </label>
+    <>
+      <div className="navbar">
+        <div className="navbar__desktop">
+          <ul className={scrollNav}>
+            {navLinks.map((link) => (
+              <Link
+                activeClass="active"
+                to={link.href}
+                smooth={true}
+                spy={true}
+                duration={500}
+              >
+                <li className="desktop__link">{link.href}</li>
+              </Link>
+            ))}
+          </ul>
         </div>
-        <div className="navbar__mobileList">
-          {isNavbarOpen ? showMobileList : ""}
-        </div>
+        <Hamburger navLinks={navLinks} />
       </div>
-    </div>
+      <img src={logo} alt="company logo" className="navbar__logo"></img>
+    </>
   );
 };
 
-export default Test;
+export default Navbar;

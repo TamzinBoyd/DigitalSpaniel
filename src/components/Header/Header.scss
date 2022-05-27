@@ -1,0 +1,50 @@
+@import "../../variables.scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10000px;
+
+  &__brand {
+    color: $pink-text-color;
+    font-size: 1rem;
+    margin-top: 11.8rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+  &__img {
+    display: relative;
+    margin-top: -8.9rem;
+    width: 960px;
+    height: auto;
+    z-index: -1;
+  }
+
+  &__text {
+    padding-left: 15rem;
+  }
+
+  &__img__container {
+    width: 960px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    flex-direction: column-reverse;
+
+    &__img {
+      margin-top: 1rem;
+      width: 100vw;
+    }
+
+    &__brand {
+      margin-top: none;
+    }
+
+    &__text {
+      padding-left: 1rem;
+    }
+  }
+}

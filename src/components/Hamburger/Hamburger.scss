@@ -1,0 +1,86 @@
+@import "../../variables";
+
+* {
+  box-sizing: border-box;
+}
+.navbar {
+  &__hamburger {
+    display: none;
+  }
+
+  &__mobileList {
+    display: hidden;
+    text-decoration: none;
+    list-style-type: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar__desktop {
+    display: none;
+  }
+
+  .navbar {
+    width: 100vw;
+
+    &__mobile {
+      // display: block;
+      // list-style-type: none;
+      // width: 100vw;
+      // // color: #ffffff;
+      // font-weight: 600;
+      // border: 2px solid red;
+      // display: flex;
+      // justify-content: space-evenly;
+      // padding: 0 1rem 0 1rem;
+      // font-family: $main-text-font;
+      // z-index: 2;
+      // margin-top: 5rem;
+    }
+
+    &__hamburger {
+      display: flex;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &__toggle {
+      z-index: 1;
+      opacity: 0.5;
+      height: 30px;
+      width: 45px;
+      margin: 25px 15px 0 0;
+    }
+    &__toggleLabel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .navbar__toggleLabel span,
+  .navbar__toggleLabel span::before,
+  .navbar__toggleLabel span::after {
+    display: block;
+    background-color: $main-text-color;
+    height: 3px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  .navbar__toggleLabel span::before,
+  .navbar__toggleLabel span::after {
+    content: "";
+    position: absolute;
+  }
+
+  .navbar__toggleLabel span::before {
+    bottom: 7px;
+  }
+
+  .navbar__toggleLabel span::after {
+    top: 7px;
+  }
+}

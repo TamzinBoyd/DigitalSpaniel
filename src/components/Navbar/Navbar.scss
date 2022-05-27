@@ -1,71 +1,81 @@
-.navbar__hamburger {
+@import "../../variables";
+
+* {
+  box-sizing: border-box;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100vw;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: transparent;
+
+  &__logo {
+    margin-left: 8rem;
+    margin-top: 2rem;
+    max-width: 12.3rem;
+  }
+
+  &__desktop {
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    &__list {
+      font-family: $main-text-font;
+      text-decoration: none;
+      list-style-type: none;
+      padding: 2.7rem 11rem 0 0;
+      width: 960px;
+      display: flex;
+      justify-content: flex-end;
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__mobile {
+    display: none;
+  }
+}
+
+.desktop__link {
+  display: flex;
+  padding: 0 2rem 0 2rem;
+  font-weight: 600;
+}
+
+.desktop__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 3px;
+  cursor: pointer;
+}
+
+.hidden {
   display: none;
 }
 
-.navbar__mobileList {
-  display: hidden;
-}
-
 @media screen and (max-width: 400px) {
-  .navbar__desktop {
-    display: none;
-  }
-
   .navbar {
-    &__mobileList {
-      display: block;
+    margin-top: none;
+    height: 2.8rem;
+
+    &__desktop {
+      display: none;
+    }
+
+    &__logo {
+      margin-left: 2rem;
+      margin-top: none;
+      max-width: 6rem;
     }
 
     &__mobile {
-      border: 2px solid red;
-      display: fixed;
+      display: block;
     }
-
-    &__hamburger {
-      display: flex;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    &__toggle {
-      //   position: relative;
-      z-index: 1;
-      opacity: 0;
-      height: 30px;
-      width: 45px;
-      background-color: red;
-      margin: 25px 15px 0 0;
-    }
-    &__toggleLabel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin-right: 10px;
-      margin-top: 20px;
-    }
-  }
-
-  .navbar__toggleLabel span,
-  .navbar__toggleLabel span::before,
-  .navbar__toggleLabel span::after {
-    display: block;
-    background-color: #101628;
-    height: 3px;
-    width: 2em;
-    border-radius: 2px;
-    position: relative;
-  }
-  .navbar__toggleLabel span::before,
-  .navbar__toggleLabel span::after {
-    content: "";
-    position: absolute;
-  }
-
-  .navbar__toggleLabel span::before {
-    bottom: 7px;
-  }
-
-  .navbar__toggleLabel span::after {
-    top: 7px;
   }
 }
