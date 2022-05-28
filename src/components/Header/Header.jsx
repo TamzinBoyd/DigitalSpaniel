@@ -21,7 +21,6 @@ const Header = () => {
         <Headings title1={"We unleash"} />
         <Headings title2={"business potential"} />
         <Paragraphs text={paragraphText} />
-
         <Link text="Let's talk" click={handleClick} />
       </div>
       <div className="header__img__container">

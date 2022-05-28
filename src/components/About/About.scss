@@ -47,3 +47,25 @@
 .about__links:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 400px) {
+  .about {
+    margin-right: 1.5%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+    &__sections {
+      width: 100%;
+      padding-left: 1em;
+      padding-right: 1em;
+      gap: 1.5em;
+    }
+
+    &__hoverText {
+      width: 100%;
+      padding-left: 1em;
+    }
+  }
+}

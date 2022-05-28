@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Hamburger.scss";
 import { Link } from "react-scroll";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Hamburger = (props) => {
   const { navLinks } = props;
@@ -15,7 +17,7 @@ const Hamburger = (props) => {
   };
 
   const showMobileList = (
-    <ul className="navbar__mobile">
+    <ul className="navbar__mobileList">
       {navLinks.map((link) => (
         <Link
           activeClass="active"
@@ -24,7 +26,7 @@ const Hamburger = (props) => {
           spy={true}
           duration={500}
         >
-          <li className="mobile__link">{link.href}</li>
+          <li className="navbar__mobile__link">{link.href}</li>
         </Link>
       ))}
     </ul>
@@ -38,9 +40,10 @@ const Hamburger = (props) => {
             className="navbar__toggle"
             onClick={handleNavbarToggle}
           ></button>
-          <label htmlFor="navbar__toggle" className="navbar__toggleLabel">
-            <span className="navbar__toggleLabel"></span>
-          </label>
+          <FontAwesomeIcon
+            icon={faBars}
+            className="navbar__hamburgerIcon"
+          ></FontAwesomeIcon>
         </div>
         {isNavbarOpen ? showMobileList : ""}
       </div>

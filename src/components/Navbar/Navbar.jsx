@@ -60,9 +60,9 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
+        <img src={logo} alt="company logo" className="navbar__logo"></img>
         <Hamburger navLinks={navLinks} />
       </div>
-      <img src={logo} alt="company logo" className="navbar__logo"></img>
     </>
   );
 };

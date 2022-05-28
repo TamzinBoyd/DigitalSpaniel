@@ -8,3 +8,10 @@
   padding-right: 10em;
   margin-bottom: 3em;
 }
+
+@media screen and (max-width: 400px) {
+  .paragraphText {
+    font-size: 1rem;
+    padding-right: 1em;
+  }
+}
