@@ -1,12 +1,17 @@
 import React from "react";
+import Headings from "../Headings/Headings";
 import styles from "./AboutLinks.scss";
 
 const AboutLinks = (props) => {
-  const { title, data, mouseover, mouseout } = props;
+  const { name, title1, title2, mouseover, mouseout } = props;
   return (
-    <div className="aboutLinks">
-      <h3 onMouseOver={mouseover} onMouseOut={mouseout}>
-        {title}
+    <div className="about__linksContainer">
+      <h3
+        onMouseOver={mouseover}
+        onMouseOut={mouseout}
+        className="about__links"
+      >
+        {name}
       </h3>
     </div>
   );

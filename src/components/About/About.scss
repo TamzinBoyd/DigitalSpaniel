@@ -1,38 +1,49 @@
 @import "../../variables";
 
 .about {
-  width: 100vw;
-  border: 2px solid red;
+  background-color: $background-grey-color;
   display: flex;
   flex-direction: row;
+  margin-right: 1.5%;
+  padding-top: 5.5em;
+  padding-bottom: 5.5em;
 
   &__titles {
     font-family: $heading-text-font;
-    font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: $dark-text-color;
+    letter-spacing: 1px;
+    font-weight: 600;
   }
-  &__links {
+  &__sections {
     width: 50%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    padding-left: 3em;
+    padding-left: 3.8em;
+    padding-right: 10em;
+  }
+  &__section2 {
+    grid-column: 1 / 2;
+  }
 
-    &__section1 {
-    }
-
-    &__section2 {
-      grid-column: 1 / 2;
-    }
-
-    &__section3 {
-      grid-column: 2/3;
-      grid-row: 1/2;
-    }
+  &__section3 {
+    grid-column: 2/3;
+    grid-row: 1/2;
   }
 
   &__hoverText {
     width: 50%;
+    padding-left: $padding-left;
   }
+
+  &__links {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: $main-text-color;
+  }
+}
+
+.about__links:hover {
+  cursor: pointer;
 }

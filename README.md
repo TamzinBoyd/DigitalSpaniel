@@ -32,6 +32,8 @@ MY APPROACH
 3. Considered where useState might be used to render appropriate elements on the virtual DOM
 4. Looked online for a suitable React based hamburger menu but decided to make my own. Opted for a hidden button and onClick event on the hamburger menu. on click it changes the state which generate the HTML for a drop down list
 5. Not created a scroll bar which sticks and disapears before, decided to use state and looked online for a solution involving window.scrollY
+6. About me section needed a hover event listener which displayed some text. I stored the data locally in an array of objects. Then accessed this and generate JSX on hover event. Included passing this data down as props down to rendered components (headings)
+7.
 
 MY NOTES TO REMOVE
 Sass - use \_ for varaibles to make sure it isn'r compiled and instead is imported

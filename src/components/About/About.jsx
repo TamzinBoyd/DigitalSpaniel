@@ -1,108 +1,211 @@
 import React, { useState } from "react";
 import styles from "./About.scss";
 import AboutLinks from "../AboutLinks/AboutLinks";
+import Headings from "../Headings/Headings";
+import Link from "../Link/Link";
+import Paragraphs from "../Paragraphs/Paragraphs";
 
 const About = () => {
   const [isHovering, setIsHovering] = useState(false);
+  const [hoverTagline, setHoverTagline] = useState("");
+  const [hoverSubTagline, setHoverSubTagline] = useState("");
+  const [hoverLink, setHoverLink] = useState("");
+
   const [hoverText, setHoverText] = useState("");
   const data = [
     {
-      title: "Brand Strategy",
+      name: "Brand Strategy",
+      tagline: "What are",
+      subTagline: "we capable of",
       description:
         "By focusing on design as an enabler and putting a huge emphasis on our clients as co-producers, we create innovative, sustainable marketing that enhances brand experience and user engagement.",
+      link: "Our process",
     },
 
     {
-      title: "Logo & Name",
+      name: "Logo & Name",
+      tagline: "Our name",
+      subTagline: "is the best",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
+      link: "Logo",
     },
 
     {
-      title: "Identity & Collateral",
+      name: "Identity & Collateral",
+      tagline: "What are",
+      subTagline: "we capable of",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
+      link: "Our process",
     },
 
     {
-      title: "eCommerce",
+      name: "eCommerce",
+      tagline: "What are",
+      subTagline: "we capable of",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
+      link: "Our process",
     },
 
     {
-      title: "Web Development",
+      name: "Web Development",
+      tagline: "What are",
+      subTagline: "we capable of",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
+      link: "Our process",
     },
 
     {
-      title: "Mobile Apps",
+      name: "Mobile Apps",
+      tagline: "What are",
+      subTagline: "we capable of",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
+      link: "Our process",
     },
 
     {
-      title: "Digital",
+      name: "Digital",
+      tagline: "What are",
+      subTagline: "we capable of",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
+      link: "Our process",
     },
 
     {
-      title: "Market Research",
+      name: "Market Research",
+      tagline: "What are",
+      subTagline: "we capable of",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
+      link: "Our process",
     },
   ];
-  const handleMouseover = (text) => {
+  const handleMouseover = (description, tagline, subTagline, link) => {
     setIsHovering(true);
-    setHoverText(text);
-  };
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-    setHoverText("");
+    setHoverText(description);
+    setHoverTagline(tagline);
+    setHoverSubTagline(subTagline);
+    setHoverLink(link);
   };
 
   return (
     <div className="about">
       <div className="about__hoverText">
         {/* only return is state value is truthy */}
-        {isHovering && <p>{hoverText}</p>}
+        {isHovering && (
+          <div>
+            <Headings title1={hoverTagline} title2={hoverSubTagline} />
+            <Paragraphs text={hoverText} />
+            <Link text={hoverLink} />
+          </div>
+        )}
       </div>
 
-      <div className="about__links">
-        <div className="about__links__section1">
+      <div className="about__sections">
+        <div className="about__section1">
           <h2 className="about__titles">BRAND</h2>
           <AboutLinks
-            title={data[0].title}
-            mouseover={(event) => handleMouseover(data[0].description)}
-            mouseout={handleMouseOut}
+            name={data[0].name}
+            mouseover={(description, tagline, subTagline, link) =>
+              handleMouseover(
+                data[0].description,
+                data[0].tagline,
+                data[0].subTagline,
+                data[0].link
+              )
+            }
           />
 
           <AboutLinks
-            title={data[1].title}
-            mouseover={(event) => handleMouseover(data[1].description)}
-            mouseout={handleMouseOut}
+            name={data[1].name}
+            mouseover={(description, tagline, subTagline, link) =>
+              handleMouseover(
+                data[1].description,
+                data[1].tagline,
+                data[1].subTagline,
+                data[1].link
+              )
+            }
           />
           <AboutLinks
-            title={data[2].title}
-            mouseover={(event) => handleMouseover(data[2].description)}
-            mouseout={handleMouseOut}
+            name={data[2].name}
+            mouseover={(description, tagline, subTagline, link) =>
+              handleMouseover(
+                data[2].description,
+                data[2].tagline,
+                data[2].subTagline,
+                data[2].link
+              )
+            }
           />
         </div>
 
-        <div className="about__links__section2">
+        <div className="about__section2">
           <h2 className="about__titles">DEVELOPMENT</h2>
-          <AboutLinks title={data[3].title} />
-          <AboutLinks title={data[4].title} />
-          <AboutLinks title={data[5].title} />
+          <AboutLinks
+            name={data[3].name}
+            mouseover={(description, tagline, subTagline, link) =>
+              handleMouseover(
+                data[3].description,
+                data[3].tagline,
+                data[3].subTagline,
+                data[3].link
+              )
+            }
+          />
+          <AboutLinks
+            name={data[4].name}
+            mouseover={(description, tagline, subTagline, link) =>
+              handleMouseover(
+                data[4].description,
+                data[4].tagline,
+                data[4].subTagline,
+                data[4].link
+              )
+            }
+          />
+          <AboutLinks
+            name={data[5].name}
+            mouseover={(description, tagline, subTagline, link) =>
+              handleMouseover(
+                data[5].description,
+                data[5].tagline,
+                data[5].subTagline,
+                data[5].link
+              )
+            }
+          />
         </div>
 
-        <div className="about__links__section3">
+        <div className="about__section3">
           <h2 className="about__titles">MARKETING</h2>
-          <AboutLinks title={data[6].title} />
-          <AboutLinks title={data[7].title} />
+          <AboutLinks
+            name={data[6].name}
+            mouseover={(description, tagline, subTagline, link) =>
+              handleMouseover(
+                data[6].description,
+                data[6].tagline,
+                data[6].subTagline,
+                data[6].link
+              )
+            }
+          />
+          <AboutLinks
+            name={data[7].name}
+            mouseover={(description, tagline, subTagline, link) =>
+              handleMouseover(
+                data[7].description,
+                data[7].tagline,
+                data[7].subTagline,
+                data[7].link
+              )
+            }
+          />
         </div>
       </div>
     </div>
