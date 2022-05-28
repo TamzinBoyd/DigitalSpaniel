@@ -1,11 +1,8 @@
-➔ We look for quality over quantity, so don't worry about getting it all done, just
-ensure that what is completed is of great quality.
-Specification:
-➔ The top navigation section should be sticky but also hide when the user scrolls down and reappear if the user scrolls up
-➔ The "Services" menu item shows the hover/active state of each menu item for the header
-➔ The header area (nav?) should be full screen on desktop and collapse to a hamburger style menu on tablet and mobile viewports which slides in/out of view when clicked/tapped
+DONE The top navigation section should be sticky but also hide when the user scrolls down and reappear if the user scrolls DONE The "Services" menu item shows the hover/active state of each menu item for the header
+TO DO ANIMATION BUT MAINLY DONE The header area (nav?) should be full screen on desktop and collapse to a hamburger style menu on tablet and mobile viewports which slides in/out of view when clicked/tapped
 
-➔ For links (e.g. "Lets talk") add a hover animation of your choosing
+DONE For links (e.g. "Lets talk") add a hover animation of your choosing
+
 ➔ The "What are we capable of" shows the hover state on "Brand Strategy"
 ➔ "Some of our recent projects" shows a tabbed slider action. Animation for slider
 and tabs of your choosing. Image hover state shown on "Make Ideas Happen"

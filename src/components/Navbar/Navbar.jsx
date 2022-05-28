@@ -17,11 +17,9 @@ const Navbar = () => {
     { name: "Contact", href: "Contact" },
   ];
 
+  // create sticky scroll on desktop NAV
   const checkForScroll = () => {
     if (typeof window !== "undefined") {
-      console.log(window.scrollY);
-      console.log(lastScroll);
-
       if (window.scrollY > lastScroll) {
         setDidUserScroll(false);
         setScrollClassName("hidden");

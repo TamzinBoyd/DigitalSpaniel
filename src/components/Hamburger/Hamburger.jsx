@@ -6,9 +6,10 @@ const Hamburger = (props) => {
   const { navLinks } = props;
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
-  // example to set
+  // example to set link ref
   // const setStyle2 = isNavbarOpen ? styles.active : "";
 
+  // to get animation add classlist and apply animation
   const handleNavbarToggle = () => {
     setIsNavbarOpen(!isNavbarOpen);
   };

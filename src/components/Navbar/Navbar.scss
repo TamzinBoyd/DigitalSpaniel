@@ -1,8 +1,5 @@
 @import "../../variables";
 
-* {
-  box-sizing: border-box;
-}
 .navbar {
   position: fixed;
   top: 0;
@@ -13,9 +10,9 @@
   background-color: transparent;
 
   &__logo {
-    margin-left: 8rem;
-    margin-top: 2rem;
-    max-width: 12.3rem;
+    margin-left: 11em;
+    margin-top: 1.8em;
+    max-width: 9.5em;
   }
 
   &__desktop {
@@ -28,12 +25,12 @@
       font-family: $main-text-font;
       text-decoration: none;
       list-style-type: none;
-      padding: 2.7rem 11rem 0 0;
-      width: 960px;
+      width: 52%;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-evenly;
+      padding: 2em 9em 0 9em;
       color: #ffffff;
-      font-size: 1.2rem;
+      font-size: 0.9rem;
     }
   }
 
@@ -44,8 +41,7 @@
 
 .desktop__link {
   display: flex;
-  padding: 0 2rem 0 2rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .desktop__link:hover {
