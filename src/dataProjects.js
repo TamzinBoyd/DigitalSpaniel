@@ -4,7 +4,7 @@ export const dataProjects = [
     tagline: "Make Ideas Happen",
     description:
       "A local paper with big ideas needed A sharp new brand to inspire readers.",
-    image: "wellies01.png",
+    image: "./assets/spanielGradient.png",
   },
 
   {

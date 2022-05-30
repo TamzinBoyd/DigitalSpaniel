@@ -5,22 +5,13 @@ import wellies01 from "../../assets/wellies01.png";
 const ProjectCard = (props) => {
   const { filteredProjects } = props;
 
-  const test2 = `../../assets/${wellies01}`;
-  // need to map over data,
-  const test = filteredProjects.map((project) => {
-    return (
-      <div>
-        {/* below not working */}
-        {/* <img src={`../../assets/${project.image}`}></img> */}
-      </div>
-    );
+  const projectCard = filteredProjects.map((project) => {
+    return <img src={project.image} className="project__card__image"></img>;
   });
 
   return (
     <>
-      <div className="project__card">{test}</div>
-
-      <img src={test2}></img>
+      <div className="project__card">{projectCard}</div>
     </>
   );
 };

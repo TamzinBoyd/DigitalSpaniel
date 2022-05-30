@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.projects {
+  display: flex;
+  padding: 3em 6.7em;
+
+  &__container {
+    width: 100%;
+    margin: auto;
+    padding-left: 14.5em;
+  }
+
+  &__slider {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projects {
+    padding: 0;
+    &__container {
+      width: 100%;
+      margin: auto;
+      padding: 1em;
+    }
+  }
+}

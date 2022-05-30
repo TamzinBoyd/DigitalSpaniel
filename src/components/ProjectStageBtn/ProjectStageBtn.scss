@@ -1,5 +1,21 @@
 @import "../../variables.scss";
 
+.project__btn__container {
+  width: 7.8em;
+  border-bottom: 1.5px solid $main-text-color;
+  text-align: center;
+}
+
 .project__btn {
-  background-color: white;
+  border: none;
+  background-color: transparent;
+  font-family: $main-text-font;
+  color: $dark-text-color;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.branding,
+.webDesign {
+  border-bottom: 1.5px solid $pink-text-color;
 }

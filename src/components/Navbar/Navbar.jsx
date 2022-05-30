@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png";
 import { Link } from "react-scroll";
 
 const Navbar = () => {
-  const [didUserScroll, setDidUserScroll] = useState(false);
+  const [didUserScroll, setDidUserScroll] = useState(true);
   const [scrollClassName, setScrollClassName] = useState("");
   const [lastScroll, setLastScroll] = useState(0);
 
@@ -23,10 +23,12 @@ const Navbar = () => {
       if (window.scrollY > lastScroll) {
         setDidUserScroll(false);
         setScrollClassName("hidden");
+        console.log(window.scrollY);
       } else {
         setDidUserScroll(true);
         setScrollClassName("");
       }
+      // remember current page location
       setLastScroll(window.scrollY);
     }
   };
