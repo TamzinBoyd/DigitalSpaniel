@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./About.scss";
+import { dataAbout } from "../../dataAbout.js";
 import AboutLinks from "../AboutLinks/AboutLinks";
 import Headings from "../Headings/Headings";
 import Link from "../Link/Link";
@@ -10,81 +11,8 @@ const About = () => {
   const [hoverTagline, setHoverTagline] = useState("");
   const [hoverSubTagline, setHoverSubTagline] = useState("");
   const [hoverLink, setHoverLink] = useState("");
-
   const [hoverText, setHoverText] = useState("");
-  const data = [
-    {
-      name: "Brand Strategy",
-      tagline: "What are",
-      subTagline: "we capable of",
-      description:
-        "By focusing on design as an enabler and putting a huge emphasis on our clients as co-producers, we create innovative, sustainable marketing that enhances brand experience and user engagement.",
-      link: "Our process",
-    },
 
-    {
-      name: "Logo & Name",
-      tagline: "Our name",
-      subTagline: "is the best",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
-      link: "Logo",
-    },
-
-    {
-      name: "Identity & Collateral",
-      tagline: "What are",
-      subTagline: "we capable of",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
-      link: "Our process",
-    },
-
-    {
-      name: "eCommerce",
-      tagline: "What are",
-      subTagline: "we capable of",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
-      link: "Our process",
-    },
-
-    {
-      name: "Web Development",
-      tagline: "What are",
-      subTagline: "we capable of",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
-      link: "Our process",
-    },
-
-    {
-      name: "Mobile Apps",
-      tagline: "What are",
-      subTagline: "we capable of",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
-      link: "Our process",
-    },
-
-    {
-      name: "Digital",
-      tagline: "What are",
-      subTagline: "we capable of",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
-      link: "Our process",
-    },
-
-    {
-      name: "Market Research",
-      tagline: "What are",
-      subTagline: "we capable of",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi consequatur voluptas quaerat amet, illum deserunt nisi. Repellendus cupiditate similique distinctio!",
-      link: "Our process",
-    },
-  ];
   const handleMouseover = (description, tagline, subTagline, link) => {
     setIsHovering(true);
     setHoverText(description);
@@ -94,9 +22,8 @@ const About = () => {
   };
 
   return (
-    <div className="about">
+    <section className="about" name="Services">
       <div className="about__hoverText">
-        {/* only return is state value is truthy */}
         {isHovering && (
           <div>
             <Headings title1={hoverTagline} title2={hoverSubTagline} />
@@ -106,40 +33,40 @@ const About = () => {
         )}
       </div>
 
-      <div className="about__sections">
+      <section className="about__sections">
         <div className="about__section1">
           <h2 className="about__titles">BRAND</h2>
           <AboutLinks
-            name={data[0].name}
+            name={dataAbout[0].name}
             mouseover={(description, tagline, subTagline, link) =>
               handleMouseover(
-                data[0].description,
-                data[0].tagline,
-                data[0].subTagline,
-                data[0].link
+                dataAbout[0].description,
+                dataAbout[0].tagline,
+                dataAbout[0].subTagline,
+                dataAbout[0].link
               )
             }
           />
 
           <AboutLinks
-            name={data[1].name}
+            name={dataAbout[1].name}
             mouseover={(description, tagline, subTagline, link) =>
               handleMouseover(
-                data[1].description,
-                data[1].tagline,
-                data[1].subTagline,
-                data[1].link
+                dataAbout[1].description,
+                dataAbout[1].tagline,
+                dataAbout[1].subTagline,
+                dataAbout[1].link
               )
             }
           />
           <AboutLinks
-            name={data[2].name}
+            name={dataAbout[2].name}
             mouseover={(description, tagline, subTagline, link) =>
               handleMouseover(
-                data[2].description,
-                data[2].tagline,
-                data[2].subTagline,
-                data[2].link
+                dataAbout[2].description,
+                dataAbout[2].tagline,
+                dataAbout[2].subTagline,
+                dataAbout[2].link
               )
             }
           />
@@ -148,35 +75,35 @@ const About = () => {
         <div className="about__section2">
           <h2 className="about__titles">DEVELOPMENT</h2>
           <AboutLinks
-            name={data[3].name}
+            name={dataAbout[3].name}
             mouseover={(description, tagline, subTagline, link) =>
               handleMouseover(
-                data[3].description,
-                data[3].tagline,
-                data[3].subTagline,
-                data[3].link
+                dataAbout[3].description,
+                dataAbout[3].tagline,
+                dataAbout[3].subTagline,
+                dataAbout[3].link
               )
             }
           />
           <AboutLinks
-            name={data[4].name}
+            name={dataAbout[4].name}
             mouseover={(description, tagline, subTagline, link) =>
               handleMouseover(
-                data[4].description,
-                data[4].tagline,
-                data[4].subTagline,
-                data[4].link
+                dataAbout[4].description,
+                dataAbout[4].tagline,
+                dataAbout[4].subTagline,
+                dataAbout[4].link
               )
             }
           />
           <AboutLinks
-            name={data[5].name}
+            name={dataAbout[5].name}
             mouseover={(description, tagline, subTagline, link) =>
               handleMouseover(
-                data[5].description,
-                data[5].tagline,
-                data[5].subTagline,
-                data[5].link
+                dataAbout[5].description,
+                dataAbout[5].tagline,
+                dataAbout[5].subTagline,
+                dataAbout[5].link
               )
             }
           />
@@ -185,30 +112,30 @@ const About = () => {
         <div className="about__section3">
           <h2 className="about__titles">MARKETING</h2>
           <AboutLinks
-            name={data[6].name}
+            name={dataAbout[6].name}
             mouseover={(description, tagline, subTagline, link) =>
               handleMouseover(
-                data[6].description,
-                data[6].tagline,
-                data[6].subTagline,
-                data[6].link
+                dataAbout[6].description,
+                dataAbout[6].tagline,
+                dataAbout[6].subTagline,
+                dataAbout[6].link
               )
             }
           />
           <AboutLinks
-            name={data[7].name}
+            name={dataAbout[7].name}
             mouseover={(description, tagline, subTagline, link) =>
               handleMouseover(
-                data[7].description,
-                data[7].tagline,
-                data[7].subTagline,
-                data[7].link
+                dataAbout[7].description,
+                dataAbout[7].tagline,
+                dataAbout[7].subTagline,
+                dataAbout[7].link
               )
             }
           />
         </div>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 };
 

@@ -7,9 +7,10 @@
 
   &__brand {
     color: $pink-text-color;
-    font-size: 0.6rem;
+    font-family: $main-text-font;
+    font-size: 0.67rem;
     margin-top: 13em;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     font-weight: 500;
   }
   &__img {
@@ -21,7 +22,7 @@
   }
 
   &__text {
-    padding-left: 21.5%;
+    padding-left: 21.8%;
     width: 50%;
   }
 

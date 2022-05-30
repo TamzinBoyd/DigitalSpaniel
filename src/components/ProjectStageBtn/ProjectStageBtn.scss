@@ -1,11 +1,5 @@
 @import "../../variables.scss";
 
-.project__btn__container {
-  width: 7.8em;
-  border-bottom: 1.5px solid $main-text-color;
-  text-align: center;
-}
-
 .project__btn {
   border: none;
   background-color: transparent;
@@ -13,9 +7,19 @@
   color: $dark-text-color;
   font-size: 0.8rem;
   font-weight: 700;
+
+  &__container {
+    width: 7.8em;
+    border-bottom: 1.5px solid $main-text-color;
+    text-align: center;
+    margin-bottom: 2em;
+  }
 }
 
-.branding,
-.webDesign {
-  border-bottom: 1.5px solid $pink-text-color;
+.active {
+  border-bottom: 2.5px solid $pink-text-color;
+}
+
+.project__btn:hover {
+  cursor: pointer;
 }

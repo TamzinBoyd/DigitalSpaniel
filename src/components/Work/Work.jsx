@@ -6,76 +6,99 @@ import ProjectStageBtn from "../ProjectStageBtn/ProjectStageBtn";
 import ProjectCard from "../ProjectCard/ProjectCard";
 
 const Work = () => {
-  const [filterStage, setFilterStage] = useState("All");
   const [data, setData] = useState(dataProjects);
-  const [filteredProjects, setFilteredProjects] = useState([]);
-  const [isBranding, setIsBranding] = useState("");
-  const [isWebDesign, setIsWebDesign] = useState("");
-  const [isDigitalMarketing, setIsDigitalMarketing] = useState("");
-  const [isAll, setIsAll] = useState("");
+  const [filteredProjects, setFilteredProjects] = useState(data);
+  const [active, setActive] = useState(false);
 
-  const handleFilterOfCategories = (e) => {
-    setFilterStage(e.target.value);
+  const [activeTab, setActiveTab] = useState({
+    all: true,
+    branding: false,
+    webDesign: false,
+    digMarketing: false,
+  });
+
+  const handleAllTab = () => {
+    setFilteredProjects(data);
+    setActiveTab({
+      all: true,
+      branding: false,
+      webDesign: false,
+      digMarketing: false,
+    });
   };
 
-  //   change class to active,
-  //   do I neeed state for all
+  const handleBrandingTab = () => {
+    setFilteredProjects(data.filter((item) => item.category === "Branding"));
+    setActiveTab({
+      all: false,
+      branding: true,
+      webDesign: false,
+      digMarketing: false,
+    });
+  };
 
-  useEffect(() => {
-    if (filterStage === "Branding") {
-      setFilteredProjects(data.filter((item) => item.category === "Branding"));
-      setIsBranding("true");
-    } else if (filterStage === "Web Design") {
-      setFilteredProjects(
-        data.filter((item) => item.category === "Web Design")
-      );
-      setIsWebDesign("true");
-    } else if (filterStage === "Digital Marketing") {
-      setFilteredProjects(
-        data.filter((item) => item.category === "Digital Marketing")
-      );
-      setIsDigitalMarketing("true");
-    } else if (filterStage === "All") {
-      setFilteredProjects(data);
-      setIsAll("true");
-    }
-  }, [filterStage]);
+  const handleWebDesignTab = () => {
+    setFilteredProjects(data.filter((item) => item.category === "Web Design"));
+    setActiveTab({
+      all: false,
+      branding: false,
+      webDesign: true,
+      digMarketing: false,
+    });
+  };
+
+  const handleDigMarketingTab = () => {
+    setFilteredProjects(
+      data.filter((item) => item.category === "Digital Marketing")
+    );
+    setActiveTab({
+      all: false,
+      branding: false,
+      webDesign: false,
+      digMarketing: true,
+    });
+  };
+
+  let activateBranding = activeTab.branding && `active`;
+  let activateAll = activeTab.all && `active`;
+  let activateWebDesign = activeTab.webDesign && `active`;
+  let activateDigMarketing = activeTab.digMarketing && `active`;
 
   return (
-    <div className="projects">
-      <secion className="projects__container">
+    <section className="projects" name="Work">
+      <div className="projects__container">
         <Headings title1="Some of our" title2="recent projects" />
         <div className="projects__slider">
           <ProjectStageBtn
             text="All"
             value="All"
-            click={handleFilterOfCategories}
-            isAll={isAll}
+            handleTab={handleAllTab}
+            activateTab={activateAll}
           />
           <ProjectStageBtn
             text="Branding"
             value="Branding"
-            click={handleFilterOfCategories}
-            isBranding={isBranding}
+            handleTab={handleBrandingTab}
+            activateTab={activateBranding}
           />
           <ProjectStageBtn
             text="Web Design"
             value="Web Design"
-            click={handleFilterOfCategories}
-            isWebDesign={isWebDesign}
+            handleTab={handleWebDesignTab}
+            activateTab={activateWebDesign}
           />
 
           <ProjectStageBtn
             text="Digital Marketing"
             value="Digital Marketing"
-            click={handleFilterOfCategories}
-            isDigitalMarketing={isDigitalMarketing}
+            handleTab={handleDigMarketingTab}
+            activateTab={activateDigMarketing}
           />
         </div>
 
         <ProjectCard filteredProjects={filteredProjects} />
-      </secion>
-    </div>
+      </div>
+    </section>
   );
 };
 

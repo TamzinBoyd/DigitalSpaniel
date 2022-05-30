@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Hamburger from "../Hamburger";
 import styles from "./Navbar.scss";
-import logo from "../../assets/logo.png";
+import logo from "../../images/logo.png";
 import { Link } from "react-scroll";
 
 const Navbar = () => {
@@ -23,7 +23,6 @@ const Navbar = () => {
       if (window.scrollY > lastScroll) {
         setDidUserScroll(false);
         setScrollClassName("hidden");
-        console.log(window.scrollY);
       } else {
         setDidUserScroll(true);
         setScrollClassName("");
@@ -35,7 +34,6 @@ const Navbar = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", checkForScroll);
-
       return () => {
         window.removeEventListener("scroll", checkForScroll);
       };
@@ -46,7 +44,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar">
+      <nav className="navbar">
         <div className="navbar__desktop">
           <ul className={scrollNav}>
             {navLinks.map((link) => (
@@ -57,14 +55,14 @@ const Navbar = () => {
                 spy={true}
                 duration={500}
               >
-                <li className="desktop__link">{link.href}</li>
+                <li className="desktop__link">{link.name}</li>
               </Link>
             ))}
           </ul>
         </div>
         <img src={logo} alt="company logo" className="navbar__logo"></img>
         <Hamburger navLinks={navLinks} />
-      </div>
+      </nav>
     </>
   );
 };

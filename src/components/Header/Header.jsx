@@ -1,5 +1,5 @@
 import React from "react";
-import spaniel from "../../assets/spanielGradient.png";
+import spaniel from "../../images/spanielGradient.png";
 import styles from "./Header.scss";
 import Link from "../Link/Link";
 import Headings from "../Headings/Headings";
@@ -15,7 +15,7 @@ const Header = () => {
   resonance.`;
 
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__text">
         <h5 className="header__brand">BRAND, DEV, ECOM, MARKETING</h5>
         <Headings title1={"We unleash"} />
@@ -26,7 +26,7 @@ const Header = () => {
       <div className="header__img__container">
         <img src={spaniel} alt="image of a dog" className="header__img"></img>
       </div>
-    </div>
+    </header>
   );
 };
 

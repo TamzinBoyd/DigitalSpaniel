@@ -1,7 +1,82 @@
 @import "../../variables.scss";
 
-.project__card {
-  &__image {
-    width: 200px;
+.projects__card {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 1em;
+
+  &__hover {
+    position: absolute;
+    width: 17.2em;
+    height: 17.2em;
+    border-radius: 5px;
+    background-color: transparent
+      linear-gradient(180deg, #19293a1a 0%, #19293a 100%) 0% 0% no-repeat
+      padding-box;
+    padding: 1.7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  // needs to be fixed to suit parent card element
+  &__tagline {
+    font-family: $heading-text-font;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 500;
+  }
+
+  &__description {
+    font-family: $main-text-font;
+    font-size: 0.8rem;
+    color: white;
+  }
+
+  &__link {
+    font-family: $main-text-font;
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 3px;
+  }
+}
+
+// need to fix styling to accomodate landscape images taking up x2 columns
+
+.projects__card__image {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .projects {
+    &__card {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5em;
+
+      &__tagline {
+        font-size: 0.5rem;
+      }
+
+      &__description {
+        font-size: 0.5rem;
+      }
+
+      &__link {
+        font-size: 0.5rem;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 1px;
+      }
+    }
+    &__card__hover {
+      position: absolute;
+      width: 8em;
+      height: 8em;
+      padding: 0.5em;
+    }
   }
 }

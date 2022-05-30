@@ -2,19 +2,11 @@ import React from "react";
 import styles from "./ProjectStageBtn.scss";
 
 const ProjectStageBtn = (props) => {
-  const {
-    text,
-    value,
-    click,
-    isAll,
-    isBranding,
-    isWebDesign,
-    isDigitalMarketing,
-  } = props;
+  const { text, value, handleTab, activateTab } = props;
 
   return (
-    <div className="project__btn__container">
-      <button onClick={click} value={value} className="project__btn">
+    <div className={`project__btn__container ${activateTab}`}>
+      <button onClick={handleTab} value={value} className="project__btn">
         {text}
       </button>
     </div>
