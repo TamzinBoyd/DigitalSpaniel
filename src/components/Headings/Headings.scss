@@ -3,14 +3,21 @@
 .mainHeading1 {
   color: $dark-text-color;
   font-family: $heading-text-font;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 
 .mainHeading2 {
   color: $main-text-color;
   font-family: $heading-text-font;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 500;
   margin-top: -1em;
+}
+
+@media screen and (max-width: 768px) {
+  .mainHeading1,
+  .mainHeading2 {
+    font-size: 1.4rem;
+  }
 }

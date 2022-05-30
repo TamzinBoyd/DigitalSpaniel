@@ -8,7 +8,7 @@
   text-decoration-thickness: 3px;
   text-decoration-color: $pink-text-color;
   font-family: $main-text-font;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   box-shadow: inset 0 0 0 $pink-text-color;
   margin: 0 -0.25em;
@@ -21,3 +21,11 @@
   color: white;
   cursor: pointer;
 }
+
+// .link {
+//   background-color: white;
+// }
+// .link:visited {
+//   background-color: $pink-text-color;
+//   color: red;
+// }

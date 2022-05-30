@@ -4,13 +4,13 @@
   background-color: $background-grey-color;
   display: flex;
   flex-direction: row;
-  margin-right: 1.5%;
+  margin: 0 6.7em;
   padding-top: 5.5em;
   padding-bottom: 5.5em;
 
   &__titles {
     font-family: $heading-text-font;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: $dark-text-color;
     letter-spacing: 1px;
     font-weight: 600;
@@ -34,12 +34,12 @@
 
   &__hoverText {
     width: 50%;
-    padding-left: $padding-left;
+    padding-left: 14.5em;
   }
 
   &__links {
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: $main-text-color;
   }
 }
@@ -48,24 +48,44 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
   .about {
     margin-right: 1.5%;
     display: flex;
     flex-direction: column-reverse;
-    padding-top: 3em;
-    padding-bottom: 3em;
 
     &__sections {
+      margin-bottom: 1em;
+      margin-left: 1em;
       width: 100%;
-      padding-left: 1em;
-      padding-right: 1em;
-      gap: 1.5em;
+      gap: 1em;
     }
 
     &__hoverText {
       width: 100%;
       padding-left: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    margin: auto;
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+    &__sections {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+
+    &__hoverText {
+      padding-left: 10%;
+      padding-right: 1em;
+    }
+
+    &__links {
+      font-size: 0.8rem;
     }
   }
 }

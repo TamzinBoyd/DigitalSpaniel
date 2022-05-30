@@ -1,9 +1,3 @@
-DONE The top navigation section should be sticky but also hide when the user scrolls down and reappear if the user scrolls DONE The "Services" menu item shows the hover/active state of each menu item for the header
-TO DO ANIMATION BUT MAINLY DONE The header area (nav?) should be full screen on desktop and collapse to a hamburger style menu on tablet and mobile viewports which slides in/out of view when clicked/tapped
-
-DONE For links (e.g. "Lets talk") add a hover animation of your choosing
-
-➔ The "What are we capable of" shows the hover state on "Brand Strategy"
 ➔ "Some of our recent projects" shows a tabbed slider action. Animation for slider
 and tabs of your choosing. Image hover state shown on "Make Ideas Happen"
 project.
@@ -15,10 +9,8 @@ can be adjusted
 accessed using the circle buttons
 ➔ All links and buttons should have an hover/active/visited state where
 appropriate
-➔ No tablet or mobile visuals are provided, so stack, reduce content where
-appropriate inline with best practice
-It would be great to demonstrate any knowledge you have of React & Javascript
-overall on the frontend using the latest standards - i.e. ES6+ - we’d also find it useful
+
+--- we’d also find it useful
 to see some TypeScript utilised as well as utilising global state management such as
 Redux or the Context API. For example:
 ➔ Testimonials could be data that’s accessed from an external API (in normal
@@ -40,3 +32,9 @@ Sass - use \_ for varaibles to make sure it isn'r compiled and instead is import
 no ITC avant guard font on google
 Learnt about NavLink hook, pulls in from react-router-dom
 REM - relative to font size of html doc, em relative to parent font size, both better for responsive sites
+
+FIX SCROLL / check if page needs to be longer to activate
+
+Add routing for link
+
+Redux
