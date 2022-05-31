@@ -31,17 +31,3 @@ MY APPROACH
 8. For the pink underline I decided to create an object and store it as state. If one of the values it true then it gets added to the className as "active" and class attributes are applied.
 
    \*This section is work in progress, currently the mouseover text to display isn't linked to the card and doesn't have the correct styling inheritance. It also needs a mouseOver event listener applying.
-
-STYLING
-BEM naming system to keep it tidier
-SASS
-Variables file
-Kept media queries within component styling files
-
-MY NOTES TO REMOVE
-Sass - use \_ for varaibles to make sure it isn't compiled and instead is imported
-no ITC avant guard font on google, used Poppins
-Learnt about NavLink hook, pulls in from react-router-dom
-REM - relative to font size of html doc, em relative to parent font size, both better for responsive sites. % more effective for margins and repsonsiveness
-
-Redux
